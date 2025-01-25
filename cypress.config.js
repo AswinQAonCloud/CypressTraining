@@ -65,12 +65,15 @@ module.exports = (on, config) => {
 
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
   e2e: {
+    video: true,
   
  "experimentalStudio": true,
   "experimentalSessionAndOrigin": true,
    "chromeWebSecurity": false,
     setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
       on('task', {
         'readXlsx': readXlsx.read
       })

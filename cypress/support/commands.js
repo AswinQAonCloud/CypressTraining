@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+require('cypress-iframe');
 
 
 Cypress.Commands.add('orangehrm', (email, password) => { 
@@ -59,15 +60,6 @@ iframe.ready(()=>{
      })
  })
 
-
-Cypress.Commands.add('contactpage',()=>{
-    cy.visit("https://vignesh-tester18.github.io/pageforbikers/mypage.html")
-    cy.get("input[name=alpha]").type("vigneshwaran")
-    cy.get("body > form > div:nth-child(5) > input[type=number]").type(8428670305,{sensitive:true})
-    cy.get("body > form > div:nth-child(11) > textarea").type("page for bike trip")
-})
-
-
 Cypress.Commands.overwrite('type',(originalFn,element,text,options)=>{
     if(options && options.sensitive){
         options.log=false
@@ -75,3 +67,12 @@ Cypress.Commands.overwrite('type',(originalFn,element,text,options)=>{
     return originalFn(element,text,options)
     
 })
+
+
+Cypress.Commands.add('getIframe',(iframe)=>{
+    return cy.get(iframe)
+          .its('0.contentDocument.body')
+          .should('be.visible')
+          .then(cy.wrap)
+  })
+  
