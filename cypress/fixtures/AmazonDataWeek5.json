@@ -1,0 +1,10 @@
+{
+    "yourname": "Aswin Kumar",
+    "Number": "3414",
+    "Email":"xxx",
+    "Password": "xx",
+    "InvalidEmail":"123@sngjs",
+    "InvalidNumber":"1234567891",
+    "InvalidPassword":"123",
+    "ReEnterPassword" :"xx"
+    }

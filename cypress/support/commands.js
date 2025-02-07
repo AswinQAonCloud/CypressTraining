@@ -23,7 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-require('cypress-iframe');
+
+/// <reference types="Cypress-xpath" />
+
+import 'cypress-file-upload';
+require('cypress-iframe');                  
+require('cypress-downloadfile/lib/downloadFileCommand')
+require('cypress-drag-drop')
 
 
 Cypress.Commands.add('orangehrm', (email, password) => { 
