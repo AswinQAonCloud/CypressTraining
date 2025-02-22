@@ -1,0 +1,19 @@
+
+{
+    "firstname": "Aswin",
+    "lastname":"Kumar",
+    "email": "aswintester@gmail.com",
+    "phone": "123456789",
+    "address":"coimbatore",
+    "language": "English",
+    "skill": "Design",
+    "country": "India",
+    "year": "1998",
+    "month": "April",
+    "date": "8",
+    "password": "1234",
+    "Repassword" : "1234",
+    "invalidcountry":"abc"
+}
+
+
